@@ -55,7 +55,6 @@ for key, value in jwtResponse.items():
         header_data = jwt.get_unverified_header(value)
         jwtDecodedToken = jwt.decode(
             value,
-            key='candidate',
             algorithms=[header_data['alg'], ],
             options={"verify_signature": False}
         )
